@@ -1,6 +1,5 @@
 //your JS code here. If required.
-//your code here
-app.use(express.json()); 
+
 function mapLetters(word) {
   const result = {};
   for (let i = 0; i < word.length; i++) {
@@ -11,7 +10,4 @@ function mapLetters(word) {
   return result;
 }
 
-app.post('/mapLetters', (req, res) => {
-  const { word } = req.body;
-  res.status(200).json(mapLetters(word));
-});
+if (typeof module !== 'undefined') module.exports = mapLetters;
